@@ -5,7 +5,7 @@
         <v-icon>mdi-temp</v-icon>
       </v-btn>
       <v-spacer class="d-sm-none" />
-      <v-toolbar-title>農地工廠回報</v-toolbar-title>
+      <v-toolbar-title>黑熊出沒痕跡通報</v-toolbar-title>
       <v-spacer />
       <div class="d-none d-sm-flex">
         <v-btn text @click="modalActions.openTutorialModal">
@@ -21,7 +21,7 @@
           常見問題
         </v-btn>
         <v-btn text href="https://about.disfactory.tw" target="_blank">
-          關於舉報系統
+          關於通報系統
         </v-btn>
         <v-btn text href="https://airtable.com/shrUraKakZRpH52DO" target="_blank">
           問題回報
@@ -54,7 +54,7 @@
           </v-list-item>
 
           <v-list-item href="https://about.disfactory.tw" target="_blank">
-            <v-list-item-title>關於舉報系統</v-list-item-title>
+            <v-list-item-title>關於通報系統</v-list-item-title>
           </v-list-item>
 
           <v-list-item href="https://airtable.com/shrUraKakZRpH52DO" target="_blank">
@@ -74,7 +74,7 @@
             mdi-checkbox-marked-circle
           </v-icon>
           <v-card-title class="secondary--text justify-center">
-            新增可疑工廠成功
+            新增可疑黑熊出沒痕跡成功
           </v-card-title>
           <v-card-text>
             <small>
@@ -90,7 +90,7 @@
             mdi-checkbox-marked-circle
           </v-icon>
           <v-card-title class="secondary--text justify-center">
-            補充工廠照片成功
+            補充黑熊出沒痕跡照片成功
           </v-card-title>
           <v-card-text>
             <small>
@@ -106,7 +106,7 @@
             mdi-checkbox-marked-circle
           </v-icon>
           <v-card-title class="secondary--text justify-center">
-            補充工廠資訊成功
+            補充黑熊出沒痕跡資訊成功
           </v-card-title>
           <v-card-text>
             <small>
