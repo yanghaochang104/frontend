@@ -1,52 +1,19 @@
 <template>
   <div class="confirm-factory-page">
     <v-container style="max-width: 630px; position: relative;" class="pt-3 pt-md-12">
-      <h2 class="mt-2 mb-2 secondary--text">確認及補充工廠資訊 DetailForm </h2>
-
-      <!-- <p>請確認工廠地點及照片，並補充工廠資訊。</p>
-
-      <h3 class="mt-7 mb-2 required primary--text">工廠地點</h3>
-
-      <p>
-        返回<a @click="gotoStepOne">步驟(1/3)</a>編輯
-      </p>
-
-      <div class="d-flex flex-column flex-md-row justify-md-between">
-        <div class="w-100 minimap-container" style="position: relative;" :class="{ desktop: $vuetify.breakpoint.mdAndUp }">
-          <minimap
-            :initialFactories="initialFactories"
-            :initialLocation="initialLocation"
-            :pinLocation="appState.factoryLocation"
-          />
-          <div class="minimap-overlay" @click="gotoStepOne" />
-        </div>
-
-        <div class="d-flex justify-between mt-3 mt-md-0 ml-md-4 d-md-inline-flex flex-md-column justify-md-start">
-          <p>
-            經度：{{ appState.factoryLocation[0].toFixed(7) }}
-            <br>
-            緯度：{{ appState.factoryLocation[1].toFixed(7) }}
-          </p>
-
-          <p>
-            <small>以上經緯度版本為WGS84</small>
-          </p>
-        </div>
+      <h2 class="mt-2 mb-2 secondary--text">Page 3 填寫問券 </h2>
+      <div v-if="formState.reportType === 1" class="flex align-items-center mb-3">
+        <h2>目擊黑熊</h2>
+      </div>
+      <div v-if="formState.reportType === 2" class="flex align-items-center mb-3">
+        <h2>發現痕跡</h2>
+      </div>
+      <div v-if="formState.reportType === 3" class="flex align-items-center mb-3">
+        <h2>其他</h2>
       </div>
 
-      <h3 class="mt-7 mb-2 required primary--text">工廠照片</h3>
 
-      <p>
-        返回<a @click="gotoStepTwo">步驟(2/3)</a>編輯
-      </p> -->
-
-      <!-- <div class="preview-images-container mb-2">
-        <div v-for="image of previewImages" :key="image.token" class="uploaded-image">
-          <img :src="image.src" />
-        </div>
-      </div> -->
-
-      <h3 class="mt-5 mb-2 primary--text">聯絡人暱稱</h3>
+      <!-- <h3 class="mt-5 mb-2 primary--text">聯絡人暱稱</h3>
 
       <p>{{ formState.nickname || '未填寫'  }}</p>
 
@@ -66,11 +33,8 @@
 
       <h3 class="mt-5 mb-2 primary--text">工廠外部文字</h3>
 
-      <v-text-field outlined v-model="formState.name" placeholder="例：小明化工廠" color="primary" />
+      <v-text-field outlined v-model="formState.name" placeholder="例：小明化工廠" color="primary" /> -->
 
-      <h3 class="mt-5 mb-2 primary--text">工廠類型</h3>
-
-      <v-select :items="factoryTypeItems" v-model="formState.type" solo outlined placeholder="未選擇" />
 
       <div class="bottom-button-container w-100 d-flex justify-center align-items-center px-xs-3 pb-md-9">
         <v-btn x-large rounded @click="submit" style="width: 100%; max-width: 345px;" color="primary">
@@ -87,7 +51,7 @@ import { createComponent, inject, ref } from '@vue/composition-api'
 import { MainMapControllerSymbol } from '../symbols'
 import { MapFactoryController } from '../lib/map'
 import { useAppState } from '../lib/appState'
-import { FACTORY_TYPE } from '../types'
+import { REPORT_TYPE } from '../types'
 
 import Minimap from './Minimap.vue'
 
@@ -116,8 +80,8 @@ export default createComponent({
     const initialFactories = mapController.value?.factories
     const initialLocation = mapController.value?.mapInstance.map.getView().getCenter()
 
-    const factoryTypeItems: Array<{ text: string, value?: string }> = [
-      ...FACTORY_TYPE
+    const reportTypeItems: Array<{ text: string, value?: number }> = [
+      ...REPORT_TYPE
     ]
 
     return {
@@ -133,7 +97,7 @@ export default createComponent({
       gotoStepTwo () {
         pageTransition.gotoCreateStep(1)
       },
-      factoryTypeItems
+      reportTypeItems
     }
   }
 })
