@@ -2,17 +2,18 @@
   <div class="confirm-factory-page">
     <v-container style="max-width: 630px; position: relative;" class="pt-3 pt-md-12">
       <h2 class="mt-2 mb-2 secondary--text">Page 3 填寫問券 </h2>
-      <div v-if="formState.reportType === 1" class="flex align-items-center mb-3">
+      <div v-if="formState.reportType === 1" class="mb-3">
         <h2>目擊黑熊</h2>
+        <h2>問券A</h2>
       </div>
-      <div v-if="formState.reportType === 2" class="flex align-items-center mb-3">
+      <div v-if="formState.reportType === 2" class="mb-3">
         <h2>發現痕跡</h2>
+        <h2>問券B</h2>
       </div>
-      <div v-if="formState.reportType === 3" class="flex align-items-center mb-3">
+      <div v-if="formState.reportType === 3" class="mb-3">
         <h2>其他</h2>
+        <h2>問券C</h2>
       </div>
-
-
       <!-- <h3 class="mt-5 mb-2 primary--text">聯絡人暱稱</h3>
 
       <p>{{ formState.nickname || '未填寫'  }}</p>
@@ -34,8 +35,6 @@
       <h3 class="mt-5 mb-2 primary--text">工廠外部文字</h3>
 
       <v-text-field outlined v-model="formState.name" placeholder="例：小明化工廠" color="primary" /> -->
-
-
       <div class="bottom-button-container w-100 d-flex justify-center align-items-center px-xs-3 pb-md-9">
         <v-btn x-large rounded @click="submit" style="width: 100%; max-width: 345px;" color="primary">
           下一步

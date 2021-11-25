@@ -308,6 +308,9 @@ const getWMTSTileGrid = () => {
     matrixIds: matrixIds
   })
 }
+// 使用前可能需要先知會 Rudy
+// '魯地圖(彩色)': 'https://rs.happyman.idv.tw/map/rudy/{z}/{x}/{y}.png',
+// '魯地圖(黑白)': 'https://rs.happyman.idv.tw/map/moi_osm/{z}/{x}/{y}.png',
 
 const getBaseLayer = (type: BASE_MAP, wmtsTileGrid: WMTSTileGrid) => {
   if (type === BASE_MAP.PROTOMAP) {

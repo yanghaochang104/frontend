@@ -1,7 +1,25 @@
 <template>
   <div class="confirm-factory-page">
     <v-container style="max-width: 630px; position: relative;" class="pt-3 pt-md-12">
-      <h2 class="mt-2 mb-2 secondary--text">確認及補充工廠資訊</h2>
+      <h2 class="mt-2 mb-2 secondary--text">填寫聯絡資訊</h2>
+      <p>為了驗證通報資料，我們可能會與您聯繫</p>
+
+      <h3 class="mt-5 mb-2 primary--text">姓名</h3>
+      <v-text-field outlined v-model="formState.contactName" placeholder="例：王小明" color="primary" />
+
+      <h3 class="mt-5 mb-2 primary--text">手機</h3>
+      <v-text-field outlined v-model="formState.contactPhone" placeholder="例：09XX-XXXXXX" color="primary" />
+
+      <h3 class="mt-5 mb-2 primary--text">Email</h3>
+      <v-text-field outlined v-model="formState.contactMail" placeholder="例：bear@bear.com" color="primary" />
+
+      <h2 class="mt-2 mb-2 secondary--text">授權條款</h2>
+
+      <v-checkbox v-model="formState.agree" :label="'我同意授權條款'"/>
+
+      <h2 class="mt-2 mb-2 secondary--text">確認通報資料</h2>
+
+      <!-- <h2 class="mt-2 mb-2 secondary--text">確認及補充工廠資訊</h2>
 
       <p>請確認工廠地點及照片，並補充工廠資訊。</p>
 
@@ -9,9 +27,9 @@
 
       <p>
         返回<a @click="gotoStepOne">步驟(1/3)</a>編輯
-      </p>
+      </p> -->
 
-      <div class="d-flex flex-column flex-md-row justify-md-between">
+      <!-- <div class="d-flex flex-column flex-md-row justify-md-between">
         <div class="w-100 minimap-container" style="position: relative;" :class="{ desktop: $vuetify.breakpoint.mdAndUp }">
           <minimap
             :initialFactories="initialFactories"
@@ -70,7 +88,7 @@
 
       <h3 class="mt-5 mb-2 primary--text">工廠類型</h3>
 
-      <v-select :items="factoryTypeItems" v-model="formState.type" solo outlined placeholder="未選擇" />
+      <v-select :items="factoryTypeItems" v-model="formState.type" solo outlined placeholder="未選擇" /> -->
 
       <div class="bottom-button-container w-100 d-flex justify-center align-items-center px-xs-3 pb-md-9">
         <v-btn x-large rounded @click="submit" style="width: 100%; max-width: 345px;" v-bind="attrs" v-on="on" color="primary">
