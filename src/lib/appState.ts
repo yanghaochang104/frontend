@@ -21,7 +21,7 @@ const CreateFactoryPageState = [
   PageState.CREATE_FACTORY_1,
   PageState.CREATE_FACTORY_2,
   PageState.CREATE_FACTORY_3,
-  PageState.CREATE_FACTORY_4,
+  PageState.CREATE_FACTORY_4
 ]
 
 const UpdateFactoryPageState = [
