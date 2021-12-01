@@ -108,7 +108,7 @@ export default createComponent({
   },
   name: 'ImageUploadForm',
   setup (props, context) {
-    const reportTypeItems: Array<{ text: string, value?: number }> = [
+    const reportTypeItems: Array<{ text: string, value?: string }> = [
       ...REPORT_TYPE
     ]
 

@@ -79,7 +79,7 @@ export default createComponent({
     const initialFactories = mapController.value?.factories
     const initialLocation = mapController.value?.mapInstance.map.getView().getCenter()
 
-    const reportTypeItems: Array<{ text: string, value?: number }> = [
+    const reportTypeItems: Array<{ text: string, value?: string }> = [
       ...REPORT_TYPE
     ]
 

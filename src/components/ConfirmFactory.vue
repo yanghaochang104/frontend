@@ -88,7 +88,7 @@
 
       <h3 class="mt-5 mb-2 primary--text">黑熊出沒痕跡類型</h3>
 
-      <v-select :items="factoryTypeItems" v-model="formState.type" solo outlined placeholder="未選擇" /> -->
+      <v-select :items="reportTypeItems" v-model="formState.type" solo outlined placeholder="未選擇" /> -->
 
       <div class="bottom-button-container w-100 d-flex justify-center align-items-center px-xs-3 pb-md-9">
         <v-btn x-large rounded @click="submit" style="width: 100%; max-width: 345px;" v-bind="attrs" v-on="on" color="primary">
@@ -134,7 +134,7 @@ export default createComponent({
     const initialFactories = mapController.value?.factories
     const initialLocation = mapController.value?.mapInstance.map.getView().getCenter()
 
-    const factoryTypeItems: Array<{ text: string, value?: string }> = [
+    const reportTypeItems: Array<{ text: string, value?: string }> = [
       ...REPORT_TYPE
     ]
 
@@ -151,7 +151,7 @@ export default createComponent({
       gotoStepTwo () {
         pageTransition.gotoCreateStep(1)
       },
-      factoryTypeItems
+      reportTypeItems
     }
   }
 })
