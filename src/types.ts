@@ -129,3 +129,9 @@ export type ReportRecord = {
   created_at: string,
   others?: string
 }
+
+export const REPORT_TYPE = [
+  { value: 1, text: '目擊黑熊' },
+  { value: 2, text: '發現痕跡' },
+  { value: 3, text: '其他' }
+] as const

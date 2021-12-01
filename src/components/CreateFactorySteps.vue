@@ -9,7 +9,7 @@
       </div>
 
       <v-spacer></v-spacer>
-      <v-toolbar-title class="secondary--text">新增可疑黑熊出沒痕跡 步驟 ({{ appState.createStepIndex }}/3)</v-toolbar-title>
+      <v-toolbar-title class="secondary--text">新增可疑工廠 步驟 ({{ appState.createStepIndex }}/4)</v-toolbar-title>
       <v-spacer></v-spacer>
 
       <div class="btn-container">
@@ -46,12 +46,12 @@
       </div>
 
       <div class="desktop-step-item" :class="{ inactive: appState.createStepIndex < 3 }"  @click="switchStep(3)">
-        <span>確認及補充黑熊出沒痕跡資訊</span>
+        <span>Page3 填寫問券</span>
         <v-icon class='mr-1'>mdi-chevron-right</v-icon>
       </div>
 
       <div class="desktop-step-item" :class="{ inactive: appState.createStepIndex < 4 }"  @click="switchStep(4)">
-        <span>確認及補充黑熊出沒痕跡資訊step4</span>
+        <span>Page4</span>
       </div>
 
       <v-spacer></v-spacer>
