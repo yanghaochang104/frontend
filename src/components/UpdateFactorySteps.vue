@@ -121,7 +121,7 @@ import { useModalState } from '../lib/hooks'
 import ImageUploadForm from './ImageUploadForm.vue'
 import { MainMapControllerSymbol } from '@/symbols'
 import { MapFactoryController } from '@/lib/map'
-import { FACTORY_TYPE } from '@/types'
+import { REPORT_TYPE } from '@/types'
 
 export default createComponent({
   name: 'UpdateFactorySteps',
@@ -203,7 +203,7 @@ export default createComponent({
     })
 
     const factoryTypeItems: Array<{ text: string, value?: string }> = [
-      ...FACTORY_TYPE
+      ...REPORT_TYPE
     ]
 
     const validStates = {

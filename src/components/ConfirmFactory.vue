@@ -105,7 +105,7 @@ import { createComponent, inject, ref } from '@vue/composition-api'
 import { MainMapControllerSymbol } from '../symbols'
 import { MapFactoryController } from '../lib/map'
 import { useAppState } from '../lib/appState'
-import { FACTORY_TYPE } from '../types'
+import { REPORT_TYPE } from '../types'
 
 import Minimap from './Minimap.vue'
 
@@ -135,7 +135,7 @@ export default createComponent({
     const initialLocation = mapController.value?.mapInstance.map.getView().getCenter()
 
     const factoryTypeItems: Array<{ text: string, value?: string }> = [
-      ...FACTORY_TYPE
+      ...REPORT_TYPE
     ]
 
     return {

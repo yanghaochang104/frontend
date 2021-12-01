@@ -1,7 +1,7 @@
 import Feature from 'ol/Feature'
 
 /* eslint-disable quote-props */
-export const FACTORY_TYPE = [
+export const REPORT_TYPE = [
   { value: '2-1', text: '痕跡: 爪痕' },
   { value: '2-2', text: '痕跡: 排遺' },
   { value: '2-3', text: '痕跡: 植物折痕' },
@@ -13,7 +13,7 @@ export const FACTORY_TYPE = [
   { value: '8', text: '現場目擊 - 確定' },
   { value: '9', text: '其他' }
 ] as const
-export type FactoryType = (typeof FACTORY_TYPE)[number]['value']
+export type FactoryType = (typeof REPORT_TYPE)[number]['value']
 
 export type FactoryDisplayStatusType = 'default' | 0 | 1 | 2 | 3
 
@@ -129,9 +129,3 @@ export type ReportRecord = {
   created_at: string,
   others?: string
 }
-
-export const REPORT_TYPE = [
-  { value: 1, text: '目擊黑熊' },
-  { value: 2, text: '發現痕跡' },
-  { value: 3, text: '其他' }
-] as const
