@@ -57,7 +57,7 @@
       ></v-text-field>
 
       <h3 class="mt-5 mb-2 primary--text">我要通報...</h3>
-      <v-select :items="reportTypeItems" v-model="formState.reportType" solo outlined placeholder="未選擇" />
+      <v-select :items="reportTypeItems" v-model="formState.type" solo outlined placeholder="未選擇" />
 
       <div class="bottom-button-container w-100 d-flex justify-center align-items-center px-xs-3 pb-md-9">
         <v-btn x-large rounded @click="onSubmit" style="width: 100%; max-width: 345px;" color="primary">
@@ -108,7 +108,7 @@ export default createComponent({
   },
   name: 'ImageUploadForm',
   setup (props, context) {
-    const reportTypeItems: Array<{ text: string, value?: number }> = [
+    const reportTypeItems: Array<{ text: string, value?: string }> = [
       ...REPORT_TYPE
     ]
 

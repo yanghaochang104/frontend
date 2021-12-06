@@ -80,7 +80,7 @@
 
         <v-textarea outlined solo v-model="formState.others" placeholder="例：雞舍疑似有熊造訪" v-if="appState.isEditComment" />
         <v-text-field outlined v-model="formState.name" placeholder="例：雞舍名稱" color="primary" v-if="appState.isEditName" />
-        <v-select :items="factoryTypeItems" v-model="formState.factory_type" solo outlined placeholder="未選擇" v-if="appState.isEditType" />
+        <v-select :items="reportTypeItems" v-model="formState.factory_type" solo outlined placeholder="未選擇" v-if="appState.isEditType" />
 
       </div>
       <v-btn x-large rounded class="w-100 primary" :disabled="!isCurrentFieldValid" style="width: 100%; max-width: 345px; margin: 0 auto;" @click="submitUpdateFactory">
@@ -101,7 +101,7 @@
 
           <v-textarea outlined solo v-model="formState.others" placeholder="例：雞舍疑似有熊造訪" v-if="appState.isEditComment" />
           <v-text-field outlined v-model="formState.name" placeholder="例：雞舍名稱" color="primary" v-if="appState.isEditName" />
-          <v-select :items="factoryTypeItems" v-model="formState.factory_type" solo outlined placeholder="未選擇" v-if="appState.isEditType" />
+          <v-select :items="reportTypeItems" v-model="formState.factory_type" solo outlined placeholder="未選擇" v-if="appState.isEditType" />
         </div>
         <v-btn x-large rounded class="w-100" :disabled="!isCurrentFieldValid" style="width: 100%; max-width: 345px; margin: 0 auto;" @click="submitUpdateFactory" color="primary">
           {{ updateFormButton }}
@@ -121,7 +121,7 @@ import { useModalState } from '../lib/hooks'
 import ImageUploadForm from './ImageUploadForm.vue'
 import { MainMapControllerSymbol } from '@/symbols'
 import { MapFactoryController } from '@/lib/map'
-import { FACTORY_TYPE } from '@/types'
+import { REPORT_TYPE } from '@/types'
 
 export default createComponent({
   name: 'UpdateFactorySteps',
@@ -202,8 +202,8 @@ export default createComponent({
       submitting: false
     })
 
-    const factoryTypeItems: Array<{ text: string, value?: string }> = [
-      ...FACTORY_TYPE
+    const reportTypeItems: Array<{ text: string, value?: string }> = [
+      ...REPORT_TYPE
     ]
 
     const validStates = {
@@ -293,7 +293,7 @@ export default createComponent({
 
       formState,
       isCurrentFieldValid,
-      factoryTypeItems,
+      reportTypeItems,
 
       submitUpdateFactory
     }

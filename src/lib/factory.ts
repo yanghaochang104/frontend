@@ -1,6 +1,6 @@
-import { FactoryData, FACTORY_TYPE, FactoryType } from '../types'
+import { FactoryData, REPORT_TYPE, FactoryType } from '../types'
 
-const factoryTypeMap: { [key: string]: string } = FACTORY_TYPE.reduce((acc, obj) => {
+const factoryTypeMap: { [key: string]: string } = REPORT_TYPE.reduce((acc, obj) => {
   return {
     ...acc,
     [obj.value]: obj.text
