@@ -121,7 +121,9 @@ export type FactoryPostData = {
   lat: number,
   lng: number,
   nickname?: string,
-  contact?: string
+  contact?: string,
+  /** 遭遇時間timestamp */
+  datetime: number
 }
 
 export type ReportRecord = {
