@@ -1,16 +1,77 @@
 <template>
   <div class="confirm-factory-page">
     <v-container style="max-width: 630px; position: relative;" class="pt-3 pt-md-12">
-      <h2 class="mt-2 mb-2 secondary--text">Page 3 填寫問券 </h2>
-      <div v-if="formState.reportType === 1" class="mb-3">
-        <h2>目擊黑熊</h2>
-        <h2>問券A</h2>
+      <h2 class="mt-2 mb-2 secondary--text">Page 3 填寫「目擊黑熊」問券</h2>
+      <div v-if="formState.type === '2-1'" class="mb-3">
+        <h2>個體資訊</h2>
+        <h2>黑熊行為與反應</h2>
+        <v-row>
+          <v-col cols="6">
+            <v-subheader>1. 目擊當下，總共幾人同行？</v-subheader>
+          </v-col>
+          <v-col cols="6">
+            <v-text-field
+              suffix="人"
+              v-model="formState.peopleNumber"
+            ></v-text-field>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6">
+            <v-subheader>2. 目擊當下，您正在做什麼？</v-subheader>
+          </v-col>
+          <v-col cols="6">
+            <v-radio-group v-model="formState.doing">
+              <v-radio
+                  v-for="(name, index) in ['行進', '休息', '開車', '煮食/用餐']"
+                  :key="index"
+                  :label="name"
+                  :value="index"
+              ></v-radio>
+              <v-radio :value="4">
+                <template v-slot:label>
+                  <v-text-field
+                      label="工作：請填入文字"
+                      v-model="formState.doingText"
+                      v-if="formState.doing === 4"
+                  ></v-text-field>
+                  <span v-if="formState.doing !== 4">工作</span>
+                </template>
+              </v-radio>
+              <v-radio :value="5">
+                <template v-slot:label>
+                  <v-text-field
+                      label="其他：請填入文字"
+                      v-model="formState.doingText"
+                      v-if="formState.doing === 5"
+                  ></v-text-field>
+                  <span v-if="formState.doing !== 5">其它</span>
+                </template>
+              </v-radio>
+            </v-radio-group>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6">
+            <v-subheader>3. 目擊當下，黑熊和您之間的大約距離？</v-subheader>
+          </v-col>
+          <v-col cols="6">
+            <v-radio-group v-model="formState.distance">
+              <v-radio
+                  v-for="(name, index) in ['小於20', '20-50', '50-100', '大於100公尺']"
+                  :key="index"
+                  :label="name"
+                  :value="index"
+              ></v-radio>
+            </v-radio-group>
+          </v-col>
+        </v-row>
       </div>
-      <div v-if="formState.reportType === 2" class="mb-3">
+      <div v-if="formState.type === '2-2'" class="mb-3">
         <h2>發現痕跡</h2>
         <h2>問券B</h2>
       </div>
-      <div v-if="formState.reportType === 3" class="mb-3">
+      <div v-if="formState.type === '2-3'" class="mb-3">
         <h2>其他</h2>
         <h2>問券C</h2>
       </div>

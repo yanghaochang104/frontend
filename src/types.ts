@@ -2,16 +2,10 @@ import Feature from 'ol/Feature'
 
 /* eslint-disable quote-props */
 export const REPORT_TYPE = [
-  { value: '2-1', text: '痕跡: 爪痕' },
-  { value: '2-2', text: '痕跡: 排遺' },
-  { value: '2-3', text: '痕跡: 植物折痕' },
-  { value: '3', text: '人熊衝突現場痕跡 - 雞舍' },
-  { value: '4', text: '人熊衝突現場痕跡 - 果園' },
-  { value: '5', text: '人熊衝突現場痕跡 - 其他' },
-  { value: '6', text: '死亡' },
-  { value: '7', text: '現場目擊 - 不確定' },
-  { value: '8', text: '現場目擊 - 確定' },
-  { value: '9', text: '其他' }
+  { value: '2-1', text: '目擊黑熊' },
+  { value: '2-2', text: '發現痕跡' },
+  { value: '2-3', text: '其他' },
+
 ] as const
 export type FactoryType = (typeof REPORT_TYPE)[number]['value']
 
