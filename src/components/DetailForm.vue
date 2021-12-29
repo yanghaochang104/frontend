@@ -23,17 +23,17 @@
           <v-col cols="6">
             <v-radio-group v-model="formState.doing">
               <v-radio
-                  v-for="(name, index) in ['行進', '休息', '開車', '煮食/用餐']"
-                  :key="index"
-                  :label="name"
-                  :value="index"
+                v-for="(name, index) in ['行進', '休息', '開車', '煮食/用餐']"
+                :key="index"
+                :label="name"
+                :value="index"
               ></v-radio>
               <v-radio :value="4">
                 <template v-slot:label>
                   <v-text-field
-                      label="工作：請填入文字"
-                      v-model="formState.doingText"
-                      v-if="formState.doing === 4"
+                    label="工作：請填入文字"
+                    v-model="formState.doingText"
+                    v-if="formState.doing === 4"
                   ></v-text-field>
                   <span v-if="formState.doing !== 4">工作</span>
                 </template>
@@ -41,9 +41,9 @@
               <v-radio :value="5">
                 <template v-slot:label>
                   <v-text-field
-                      label="其他：請填入文字"
-                      v-model="formState.doingText"
-                      v-if="formState.doing === 5"
+                    label="其他：請填入文字"
+                    v-model="formState.doingText"
+                    v-if="formState.doing === 5"
                   ></v-text-field>
                   <span v-if="formState.doing !== 5">其它</span>
                 </template>
@@ -58,12 +58,124 @@
           <v-col cols="6">
             <v-radio-group v-model="formState.distance">
               <v-radio
-                  v-for="(name, index) in ['小於20', '20-50', '50-100', '大於100公尺']"
-                  :key="index"
-                  :label="name"
-                  :value="index"
+                v-for="(name, index) in ['小於20', '20-50', '50-100', '大於100公尺']"
+                :key="index"
+                :label="name"
+                :value="index"
               ></v-radio>
             </v-radio-group>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6">
+            <v-subheader>4. 目擊時黑熊正在做什麼？</v-subheader>
+          </v-col>
+          <v-col cols="6">
+            <v-radio-group v-model="formState.bearBehavior">
+              <v-radio
+                v-for="(name, index) in ['慢步', '奔跑', '爬樹', '休息', '覓食']"
+                :key="index"
+                :label="name"
+                :value="index"
+              ></v-radio>
+              <v-radio :value="5">
+                <template v-slot:label>
+                  <v-text-field
+                    label="其他：請填入文字"
+                    v-model="formState.bearBehaviorText"
+                    v-if="formState.bearBehavior === 5"
+                  ></v-text-field>
+                  <span v-if="formState.bearBehavior !== 5">其他</span>
+                </template>
+              </v-radio>
+            </v-radio-group>
+          </v-col>
+        </v-row>
+        <v-row v-if="formState.bearBehavior === 4">
+          <v-col cols="6">
+            <v-subheader>4-1. 承4，黑熊在吃什麼?？</v-subheader>
+          </v-col>
+          <v-col cols="6">
+            <v-radio-group v-model="formState.food">
+              <v-radio
+                v-for="(name, index) in ['不清楚', '果實', '莖葉', '昆蟲', '動物', '農作物', '家禽/畜', '蜂蜜', '垃圾/廚餘', '動物飼料', '人類食物', '其他']"
+                :key="index"
+                :label="name"
+                :value="index"
+              >
+                <template v-slot:label>
+                  <v-text-field
+                    :label="`請填入${name}名稱`"
+                    v-model="formState.foodText"
+                    v-if="![0, 7, 8].includes(formState.food) && formState.food === index"
+                  ></v-text-field>
+                  <span v-if="[0, 7, 8].includes(formState.food) || formState.food !== index">{{name}}</span>
+                </template>
+              </v-radio>
+            </v-radio-group>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6">
+            <v-subheader>5. 黑熊何時注意到人員存在？</v-subheader>
+          </v-col>
+          <v-col cols="6">
+            <v-radio-group v-model="formState.bearNotice">
+              <v-radio
+                v-for="(name, index) in ['黑熊一直未發現我', '目擊前黑熊就發現我了']"
+                :key="index"
+                :label="name"
+                :value="index"
+              ></v-radio>
+              <v-radio :value="2">
+                <template v-slot:label>
+                  <v-text-field
+                    label="目擊後約幾分鐘黑熊發現我的存在"
+                    v-model="formState.bearNoticeMinutes"
+                    suffix="分鐘"
+                  ></v-text-field>
+                </template>
+              </v-radio>
+            </v-radio-group>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6">
+            <v-subheader>6. 您目擊黑熊後，做出什麼反應？</v-subheader>
+          </v-col>
+          <v-col cols="6">
+            <v-radio-group v-model="formState.humanReaction">
+              <v-radio
+                v-for="(name, index) in ['靜止不動', '緩慢離開', '快速逃跑', '大聲喊叫或發出聲響', '爬樹', '趴在地上裝死']"
+                :key="index"
+                :label="name"
+                :value="index"
+              ></v-radio>
+              <v-radio :value="6">
+                <template v-slot:label>
+                  <v-text-field
+                    label="其他：請填入文字"
+                    v-model="formState.humanReactionText"
+                    v-if="formState.humanReaction === 6"
+                  ></v-text-field>
+                  <span v-if="formState.humanReaction !== 6">其他</span>
+                </template>
+              </v-radio>
+            </v-radio-group>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6">
+            <v-subheader>7. 黑熊發現您後，做出什麼反應？（可複選）</v-subheader>
+          </v-col>
+          <v-col cols="6">
+            <v-checkbox
+              v-model="formState.bearReaction"
+              v-for="(name, index) in ['繼續原先的活動', '朝人觀望', '戒備', '緩慢走開', '快速逃離', '吼叫威嚇', '主動接近人']"
+              :key="index"
+              :label="name"
+              :value="index"
+            ></v-checkbox>
           </v-col>
         </v-row>
       </div>
