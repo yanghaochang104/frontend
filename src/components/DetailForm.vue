@@ -4,6 +4,84 @@
       <h2 class="mt-2 mb-2 secondary--text">Page 3 填寫「目擊黑熊」問券</h2>
       <div v-if="formState.type === '2-1'" class="mb-3">
         <h2>個體資訊</h2>
+        <v-row>
+          <v-col cols="6">
+            <v-subheader>目擊個體數</v-subheader>
+          </v-col>
+          <v-col cols="6">
+            <v-text-field
+              type="number"
+              suffix="隻"
+              v-model="formState.bearNumber"
+            ></v-text-field>
+          </v-col>
+        </v-row>
+        <div>
+          <v-row>
+            <v-col cols="6">
+            </v-col>
+            <v-col cols="6">
+              <v-radio-group v-model="formState.bearType" row>
+                <v-radio
+                  label="成熊"
+                  value="1"
+                ></v-radio>
+                <v-radio
+                  label="幼熊"
+                  value="2"
+                ></v-radio>
+              </v-radio-group>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="6">
+              <v-subheader>體型</v-subheader>
+            </v-col>
+            <v-col cols="6">
+              <v-radio-group v-model="formState.bearSize" row>
+                <v-radio value="1">
+                  <template v-slot:label>
+                    <v-text-field
+                      v-model="formState.bearSizeNumber"
+                      prefix="頭尾體長約"
+                      suffix="公分"
+                    ></v-text-field>
+                  </template>
+                </v-radio>
+                <v-radio
+                  label="不清楚"
+                  value="2"
+                ></v-radio>
+              </v-radio-group>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="6">
+              <v-subheader>性別</v-subheader>
+            </v-col>
+            <v-col cols="6">
+              <v-radio-group v-model="formState.bearSex" row>
+                <v-radio
+                  v-for="(name, index) in ['公', '母', '不清楚']"
+                  :key="index"
+                  :label="name"
+                  :value="index"
+                ></v-radio>
+              </v-radio-group>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col cols="6">
+              <v-subheader>其他特徵</v-subheader>
+            </v-col>
+            <v-col cols="6">
+              <v-text-field
+                label="請填入文字"
+                v-model="formState.bearFeature"
+              ></v-text-field>
+            </v-col>
+          </v-row>
+        </div>
         <h2>黑熊行為與反應</h2>
         <v-row>
           <v-col cols="6">
@@ -11,8 +89,9 @@
           </v-col>
           <v-col cols="6">
             <v-text-field
+              type="number"
               suffix="人"
-              v-model="formState.peopleNumber"
+              v-model="formState.humanNumber"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -21,7 +100,7 @@
             <v-subheader>2. 目擊當下，您正在做什麼？</v-subheader>
           </v-col>
           <v-col cols="6">
-            <v-radio-group v-model="formState.doing">
+            <v-radio-group v-model="formState.humanBehavior">
               <v-radio
                 v-for="(name, index) in ['行進', '休息', '開車', '煮食/用餐']"
                 :key="index"
@@ -32,20 +111,20 @@
                 <template v-slot:label>
                   <v-text-field
                     label="工作：請填入文字"
-                    v-model="formState.doingText"
-                    v-if="formState.doing === 4"
+                    v-model="formState.humanBehaviorText"
+                    v-if="formState.humanBehavior === 4"
                   ></v-text-field>
-                  <span v-if="formState.doing !== 4">工作</span>
+                  <span v-if="formState.humanBehavior !== 4">工作</span>
                 </template>
               </v-radio>
               <v-radio :value="5">
                 <template v-slot:label>
                   <v-text-field
                     label="其他：請填入文字"
-                    v-model="formState.doingText"
-                    v-if="formState.doing === 5"
+                    v-model="formState.humanBehaviorText"
+                    v-if="formState.humanBehavior === 5"
                   ></v-text-field>
-                  <span v-if="formState.doing !== 5">其它</span>
+                  <span v-if="formState.humanBehavior !== 5">其它</span>
                 </template>
               </v-radio>
             </v-radio-group>
@@ -132,6 +211,7 @@
                   <v-text-field
                     label="目擊後約幾分鐘黑熊發現我的存在"
                     v-model="formState.bearNoticeMinutes"
+                    type="number"
                     suffix="分鐘"
                   ></v-text-field>
                 </template>
@@ -175,7 +255,50 @@
               :key="index"
               :label="name"
               :value="index"
+              hide-details
             ></v-checkbox>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6">
+            <v-subheader>8. 是否有人因為黑熊而受傷？</v-subheader>
+          </v-col>
+          <v-col cols="6">
+            <v-radio-group v-model="formState.humanHurt">
+              <v-radio
+                  label="是"
+                  value="1"
+              ></v-radio>
+              <v-radio
+                  label="否"
+                  value="0"
+              ></v-radio>
+              <v-text-field
+                  label="說明"
+                  v-model="formState.humanHurtExplanation"
+              ></v-text-field>
+            </v-radio-group>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="6">
+            <v-subheader>8. 您是否希望以後再看到野外的台灣黑熊？</v-subheader>
+          </v-col>
+          <v-col cols="6">
+            <v-radio-group v-model="formState.ohShownAgain">
+              <v-radio
+                  label="是"
+                  value="1"
+              ></v-radio>
+              <v-radio
+                  label="否"
+                  value="0"
+              ></v-radio>
+              <v-text-field
+                  label="為什麼"
+                  v-model="formState.ohShownAgainReason"
+              ></v-text-field>
+            </v-radio-group>
           </v-col>
         </v-row>
       </div>
