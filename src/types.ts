@@ -117,7 +117,30 @@ export type FactoryPostData = {
   nickname?: string,
   contact?: string,
   /** 遭遇時間timestamp */
-  datetime: number
+  datetime: number,
+  bearNumber: number,
+  bearType: number,
+  bearSize: number,
+  bearSizeNumber: number,
+  bearSex: number,
+  bearFeature: string,
+  humanNumber: number,
+  humanBehavior: number,
+  humanBehaviorText?: string,
+  distance: number,
+  bearBehavior: number,
+  bearBehaviorText?: string,
+  food: number,
+  foodText: string,
+  bearNotice: number,
+  bearNoticeMinutes?: number,
+  humanReaction: number,
+  humanReactionText: string,
+  bearReaction: number[],
+  humanHurt: number,
+  humanHurtExplanation: string,
+  ohShownAgain: number,
+  ohShownAgainReason: string
 }
 
 export type ReportRecord = {

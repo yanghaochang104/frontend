@@ -417,7 +417,30 @@ export default createComponent({
       /** locale date */
       date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
       /** locale time */
-      time: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substring(11, 16)
+      time: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substring(11, 16),
+      bearNumber: 0,
+      bearType: 0,
+      bearSize: 0,
+      bearSizeNumber: 0,
+      bearSex: 0,
+      bearFeature: '',
+      humanNumber: 0,
+      humanBehavior: 0,
+      humanBehaviorText: '',
+      distance: 0,
+      bearBehavior: 0,
+      bearBehaviorText: '',
+      food: 0,
+      foodText: '',
+      bearNotice: 0,
+      bearNoticeMinutes: 0,
+      humanReaction: 0,
+      humanReactionText: '',
+      bearReaction: [],
+      humanHurt: 0,
+      humanHurtExplanation: '',
+      ohShownAgain: 0,
+      ohShownAgainReason: ''
     })
 
     const {
@@ -434,14 +457,10 @@ export default createComponent({
       try {
         const [lng, lat]: number[] = appState.factoryLocation
         const factory: FactoryPostData = {
-          name: createFactoryFormState.name,
-          others: createFactoryFormState.others,
-          type: createFactoryFormState.type,
+          ...createFactoryFormState,
           lng,
           lat,
           images: uploadedImages.value.map((i) => i.token),
-          nickname: createFactoryFormState.nickname,
-          contact: createFactoryFormState.contact,
           /** 遭遇時間戳記 */
           datetime: Date.parse(`${createFactoryFormState.date}T${createFactoryFormState.time}`)
         }
