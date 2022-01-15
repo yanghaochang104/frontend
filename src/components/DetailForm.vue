@@ -12,23 +12,29 @@
             <v-text-field
               type="number"
               suffix="隻"
-              v-model="formState.bearNumber"
+              v-model.number="formState.bearNumber"
             ></v-text-field>
           </v-col>
         </v-row>
-        <div>
+        <div
+          v-for="(n, index) in formState.bearNumber"
+          :key="index"
+          class="mb-5"
+          style="box-shadow: 0px 0px 5px 2px #00000030; border-radius: 5px; padding: 25px"
+        >
           <v-row>
             <v-col cols="6">
+              <h2>黑熊{{index + 1}}</h2>
             </v-col>
             <v-col cols="6">
-              <v-radio-group v-model="formState.bearType" row>
+              <v-radio-group v-model="formState.bearType[index]" row>
                 <v-radio
                   label="成熊"
-                  value="1"
+                  :value="0"
                 ></v-radio>
                 <v-radio
                   label="幼熊"
-                  value="2"
+                  :value="1"
                 ></v-radio>
               </v-radio-group>
             </v-col>
@@ -38,11 +44,11 @@
               <v-subheader>體型</v-subheader>
             </v-col>
             <v-col cols="6">
-              <v-radio-group v-model="formState.bearSize" row>
-                <v-radio value="1">
+              <v-radio-group v-model="formState.bearSize[index]" row>
+                <v-radio :value="1">
                   <template v-slot:label>
                     <v-text-field
-                      v-model="formState.bearSizeNumber"
+                      v-model.number="formState.bearSizeNumber[index]"
                       prefix="頭尾體長約"
                       suffix="公分"
                     ></v-text-field>
@@ -50,7 +56,7 @@
                 </v-radio>
                 <v-radio
                   label="不清楚"
-                  value="2"
+                  :value="2"
                 ></v-radio>
               </v-radio-group>
             </v-col>
@@ -60,7 +66,7 @@
               <v-subheader>性別</v-subheader>
             </v-col>
             <v-col cols="6">
-              <v-radio-group v-model="formState.bearSex" row>
+              <v-radio-group v-model="formState.bearSex[index]" row>
                 <v-radio
                   v-for="(name, index) in ['公', '母', '不清楚']"
                   :key="index"
@@ -77,7 +83,7 @@
             <v-col cols="6">
               <v-text-field
                 label="請填入文字"
-                v-model="formState.bearFeature"
+                v-model="formState.bearFeature[index]"
               ></v-text-field>
             </v-col>
           </v-row>

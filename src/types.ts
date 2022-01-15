@@ -107,6 +107,14 @@ export interface FactoriesByStatus {
   [key: string]: FactoryData[]
 }
 
+type Bear = {
+  bearType: number,
+  bearSize: number,
+  bearSizeNumber?: number,
+  bearSex: number,
+  bearFeature?: string
+}
+
 export type FactoryPostData = {
   name: string,
   type?: FactoryType,
@@ -119,11 +127,7 @@ export type FactoryPostData = {
   /** 遭遇時間timestamp */
   datetime: number,
   bearNumber: number,
-  bearType: number,
-  bearSize: number,
-  bearSizeNumber: number,
-  bearSex: number,
-  bearFeature: string,
+  bears: Bear[],
   humanNumber: number,
   humanBehavior: number,
   humanBehaviorText?: string,

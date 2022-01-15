@@ -418,12 +418,12 @@ export default createComponent({
       date: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10),
       /** locale time */
       time: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substring(11, 16),
-      bearNumber: 0,
-      bearType: 0,
-      bearSize: 0,
-      bearSizeNumber: 0,
-      bearSex: 0,
-      bearFeature: '',
+      bearNumber: 1,
+      bearType: [],
+      bearSize: [],
+      bearSizeNumber: [],
+      bearSex: [],
+      bearFeature: [],
       humanNumber: 0,
       humanBehavior: 0,
       humanBehaviorText: '',
@@ -456,8 +456,16 @@ export default createComponent({
 
       try {
         const [lng, lat]: number[] = appState.factoryLocation
+        const bears = [...Array(createFactoryFormState.bearNumber).keys()].map(index => ({
+          bearType: createFactoryFormState.bearType[index],
+          bearSize: createFactoryFormState.bearSize[index],
+          bearSizeNumber: createFactoryFormState.bearSizeNumber[index],
+          bearSex: createFactoryFormState.bearSex[index],
+          bearFeature: createFactoryFormState.bearFeature[index]
+        }))
         const factory: FactoryPostData = {
           ...createFactoryFormState,
+          bears,
           lng,
           lat,
           images: uploadedImages.value.map((i) => i.token),
