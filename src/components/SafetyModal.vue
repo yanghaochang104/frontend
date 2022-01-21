@@ -10,7 +10,7 @@
             </p>
           </v-carousel-item>
           <v-carousel-item class="page pa-3">
-            <img src="/images/safety_notice/1.png" alt="">
+            <img src="/images/safety_notice/bear-1.png" alt="">
             <h2>
               遠遠看到黑熊
             </h2>
@@ -19,7 +19,7 @@
             </p>
           </v-carousel-item>
           <v-carousel-item class="page pa-3">
-            <img src="/images/safety_notice/2.png" alt="">
+            <img src="/images/safety_notice/bear-2.png" alt="">
             <h2>近距離遇到黑熊…</h2>
             <p>
               原地不動，冷靜地對熊說話並表示自己沒有威脅性，評估地勢，面對熊後退，逐漸增加與熊之間的距離。
@@ -31,7 +31,7 @@
             <p>面對熊，緩緩後退離開現場</p>
           </v-carousel-item>
           <v-carousel-item class="page pa-3">
-            <img src="/images/safety_notice/4.png" alt="">
+            <img src="/images/safety_notice/bear-4.png" alt="">
             <h2>避免遇到熊</h2>
             <p>在山區行走：大聲說話、攜帶熊鈴，認識熊跡，發現熊跡時，繞道避開。在營地：落實無痕山林，垃圾廚餘密封並帶下山。</p>
           </v-carousel-item>
