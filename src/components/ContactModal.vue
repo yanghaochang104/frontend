@@ -2,7 +2,7 @@
   <div class="contact-modal-container">
     <app-modal :open="open" :dismiss="dismiss">
       <div class="page">
-        <img width="137" src="/images/cet-logo.png" alt="Citizen of the Earth Taiwan">
+        <img width="287" src="/images/oh-shown-logo.png" alt="Oh Shown! Logo">
 
         <h3>
           有任何回報相關問題<br>
@@ -10,9 +10,9 @@
         </h3>
 
         <p>
-          地球公民基金會<br>
-          TEL: 02-23920371<br>
-          Email: <a href="mailto:cet@cet-taiwan.org">cet@cet-taiwan.org</a><br>
+          台灣黑熊保育協會<br>
+          TEL: 02-23818696<br>
+          Email: <a href="mailto:taiwanblackbear@tbbcatw.com">taiwanblackbear@tbbcatw.com</a><br>
         </p>
       </div>
     </app-modal>
