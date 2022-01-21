@@ -36,7 +36,7 @@
             <p>在山區行走：大聲說話、攜帶熊鈴，認識熊跡，發現熊跡時，繞道避開。在營地：落實無痕山林，垃圾廚餘密封並帶下山。</p>
           </v-carousel-item>
           <v-carousel-item class="page pa-3">
-            <img src="/images/safety_notice/5.png" alt="">
+            <img src="/images/safety_notice/bear-5.png" alt="">
             <h2>避免人熊衝突？</h2>
             <p>與林地的邊緣保持一段空曠地，果園將落果腐爛果撿起。農舍或畜舍用嚇阻動物用的電網圍起來。</p>
           </v-carousel-item>
