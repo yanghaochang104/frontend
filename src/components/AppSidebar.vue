@@ -31,7 +31,7 @@ export default createComponent({
       { text: '使用說明', action: modalActions.openTutorialModal },
       { text: '安全須知', action: modalActions.openSafetyModal },
       { text: '聯絡我們', action: modalActions.openContactModal },
-      { text: '常見問題', href: 'https://about.disfactory.tw/#section-f_c360c8de-447e-4c0a-a856-4af18b9a5240' },
+      { text: '常見問題', href: 'https://www.taiwanbear.org.tw/fqa/' },
       { text: '關於通報系統', href: 'https://github.com/tai271828/disfactory-frontend' },
       { text: '問題回報', href: 'https://github.com/tai271828/disfactory-frontend/issues/new/choose' }
     ]
