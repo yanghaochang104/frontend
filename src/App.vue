@@ -17,13 +17,13 @@
         <v-btn text @click="modalActions.openContactModal">
           聯絡我們
         </v-btn>
-        <v-btn text href="https://about.disfactory.tw/#section-f_c360c8de-447e-4c0a-a856-4af18b9a5240">
+        <v-btn text href="https://www.taiwanbear.org.tw/fqa/">
           常見問題
         </v-btn>
-        <v-btn text href="https://about.disfactory.tw" target="_blank">
+        <v-btn text href="https://github.com/tai271828/disfactory-frontend/blob/main-tbbca" target="_blank">
           關於通報系統
         </v-btn>
-        <v-btn text href="https://airtable.com/shrUraKakZRpH52DO" target="_blank">
+        <v-btn text href="https://github.com/tai271828/disfactory-frontend/issues/new/choose" target="_blank">
           問題回報
         </v-btn>
       </div>
@@ -49,15 +49,15 @@
             <v-list-item-title>聯絡我們</v-list-item-title>
           </v-list-item>
 
-          <v-list-item href="https://about.disfactory.tw/#section-f_c360c8de-447e-4c0a-a856-4af18b9a5240" target="_blank">
+          <v-list-item href="https://www.taiwanbear.org.tw/fqa/" target="_blank">
             <v-list-item-title>常見問題</v-list-item-title>
           </v-list-item>
 
-          <v-list-item href="https://about.disfactory.tw" target="_blank">
+          <v-list-item href="https://github.com/tai271828/disfactory-frontend/blob/main-tbbca" target="_blank">
             <v-list-item-title>關於通報系統</v-list-item-title>
           </v-list-item>
 
-          <v-list-item href="https://airtable.com/shrUraKakZRpH52DO" target="_blank">
+          <v-list-item href="https://github.com/tai271828/disfactory-frontend/issues/new/choose" target="_blank">
             <v-list-item-title>問題回報</v-list-item-title>
           </v-list-item>
         </v-list-item-group>
