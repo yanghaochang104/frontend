@@ -20,7 +20,7 @@
         <v-btn text href="https://www.taiwanbear.org.tw/fqa/">
           常見問題
         </v-btn>
-        <v-btn text href="https://github.com/tai271828/disfactory-frontend/blob/main-tbbca" target="_blank">
+        <v-btn text href="https://github.com/tai271828/disfactory-frontend/" target="_blank">
           關於通報系統
         </v-btn>
         <v-btn text href="https://github.com/tai271828/disfactory-frontend/issues/new/choose" target="_blank">
@@ -53,7 +53,7 @@
             <v-list-item-title>常見問題</v-list-item-title>
           </v-list-item>
 
-          <v-list-item href="https://github.com/tai271828/disfactory-frontend/blob/main-tbbca" target="_blank">
+          <v-list-item href="https://github.com/tai271828/disfactory-frontend" target="_blank">
             <v-list-item-title>關於通報系統</v-list-item-title>
           </v-list-item>
 
