@@ -145,7 +145,6 @@ export default createComponent({
       gotoStepOne () {
         if (mapController.value) {
           pageTransition.gotoCreateStep(0)
-          mapController.value.mapInstance.setLUILayerVisible(true)
         }
       },
       gotoStepTwo () {

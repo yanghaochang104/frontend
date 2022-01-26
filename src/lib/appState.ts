@@ -1,7 +1,8 @@
-import { inject, provide, reactive, computed } from '@vue/composition-api'
-import { useGA } from './useGA'
+import { computed, inject, provide, reactive } from '@vue/composition-api'
+
 import { FactoryData } from '../types'
 import { featureStyleCache } from './map'
+import { useGA } from './useGA'
 
 const AppStateSymbol = Symbol('AppState')
 
@@ -73,7 +74,7 @@ export const provideAppState = () => {
 
     // map states
     mapLngLat: [] as number[],
-    canPlaceFactory: false,
+    canPlaceFactory: true,
     factoryDetailsExpanded: false
   })
 

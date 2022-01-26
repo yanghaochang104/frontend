@@ -200,9 +200,6 @@ export default createComponent({
 
     function onClickCreateFactoryButton () {
       if (!mapControllerRef.value) return
-
-      mapControllerRef.value.mapInstance.setLUILayerVisible(true)
-
       pageTransition.startCreateFactory()
     }
 
