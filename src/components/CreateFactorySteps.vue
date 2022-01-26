@@ -398,7 +398,6 @@ export default createComponent({
         cancelCreateFactory()
       } else if (appState.createStepIndex === 2) {
         if (mapController.value) {
-          mapController.value.mapInstance.setLUILayerVisible(true)
           pageTransition.previousCreateStep()
         }
       } else {

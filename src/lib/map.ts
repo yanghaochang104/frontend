@@ -465,9 +465,7 @@ export class OLMap {
       const [lng, lat] = transform(view.getCenter()!, 'EPSG:3857', 'EPSG:4326')
 
       if (handler.onMoved) {
-        const { width, height } = this.mapDom.getBoundingClientRect()
-        const canPlace = await this.canPlaceFactory([width / 2, height / 2])
-        handler.onMoved([lng, lat, range, zoom], canPlace)
+        handler.onMoved([lng, lat, range, zoom], true)
       }
     }
 
