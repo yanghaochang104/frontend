@@ -13,7 +13,7 @@
 
       <v-spacer></v-spacer>
       <v-toolbar-title class="secondary--text"
-        >新增可疑工廠 步驟 ({{ appState.createStepIndex }}/4)</v-toolbar-title
+        >新增黑熊出沒痕跡 步驟 ({{ appState.createStepIndex }}/4)</v-toolbar-title
       >
       <v-spacer></v-spacer>
 
@@ -423,6 +423,10 @@ export default createComponent({
       bearSizeNumber: [],
       bearSex: [],
       bearFeature: [],
+      // 環境地貌
+      groundTypes: [], // 土地類型
+      vegetations: [], // 植被
+      bearAttractors: [], // 附近可能吸引熊接近的物品
       humanNumber: 0,
       humanBehavior: 0,
       humanBehaviorText: '',

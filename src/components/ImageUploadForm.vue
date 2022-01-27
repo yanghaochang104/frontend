@@ -72,6 +72,50 @@
       </div>
       <hr />
 
+      <div class="mb-3">
+        <h2 class="mt-7 mb-2 secondary--text">環境地貌(可複選)</h2>
+        <h3 class="mb-3 mt-7 primary--text required">土地類型：</h3>
+
+        <div class="d-flex align-content-start flex-wrap">
+          <v-checkbox
+            class="pa-2"
+            v-for="(groundType, index) in GROUND_TYPES"
+            :key="`${groundType}${index}`"
+            v-model="formState.groundTypes"
+            :label="groundType"
+            :value="groundType"
+          >
+          </v-checkbox>
+        </div>
+
+        <h3 class="mb-3 mt-7 primary--text required">植被：</h3>
+        <div class="d-flex align-content-start flex-wrap">
+          <v-checkbox
+            class="pa-2"
+            v-for="(vegetation, index) in VEGETATIONS"
+            :key="`${vegetation}${index}`"
+            v-model="formState.vegetations"
+            :label="vegetation"
+            :value="vegetation"
+          />
+        </div>
+
+        <h3 class="mb-3 mt-7 primary--text required">
+          附近可能吸引熊接近的物品:
+        </h3>
+
+        <div class="d-flex align-content-start flex-wrap">
+          <v-checkbox
+            class="pa-2"
+            v-for="(attractor, index) in BEAR_ATTRACTORS"
+            :key="`${attractor}${index}`"
+            v-model="formState.bearAttractors"
+            :label="attractor"
+            :value="attractor"
+          />
+        </div>
+      </div>
+      <hr />
       <h2 class="mt-7 mb-2 secondary--text">聯絡資訊（非必填）</h2>
 
       <p>
@@ -131,43 +175,88 @@ export default createComponent({
   props: {
     previewImages: {
       type: Array,
-      default: [],
+      default: []
     },
     uploading: {
-      default: false,
+      default: false
     },
     error: {
-      default: null,
+      default: null
     },
     onClickRemoveImage: {
-      type: Function,
+      type: Function
     },
     submit: {
-      type: Function,
+      type: Function
     },
     valid: {
       type: Boolean,
-      default: false,
+      default: false
     },
     formState: {
-      type: Object,
+      type: Object
     },
     submitText: {
-      type: String,
+      type: String
     },
     disableProgressiveUpload: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   name: "ImageUploadForm",
   setup(props, context) {
     const reportTypeItems: Array<{ text: string; value?: string }> = [
-      ...REPORT_TYPE,
+      ...REPORT_TYPE
+    ];
+    const GROUND_TYPES = [
+      "森林(天然林)",
+      "森林(人工林)",
+      "森林(次生林)",
+      "溪流或河床",
+      "住宅房舍附近",
+      "遊憩區(包括山屋 / 營地週遭)",
+      "道路(步道)",
+      "道路(馬路)",
+      "道路(林道)",
+      "道路(產業道路)",
+      "農牧用地(果園)",
+      "農牧用地(菜園)",
+      "農牧用地(休耕地)",
+      "農牧用地(養蜂場)",
+      "農牧用地(禽舍)",
+      "農牧用地(豬舍)",
+      "農牧用地(工寮或倉庫)",
+      "其他"
+    ];
+    const VEGETATIONS = [
+      "闊葉林",
+      "針葉林",
+      "混合林",
+      "灌叢",
+      "草原",
+      "竹林/箭竹林",
+      "裸露地",
+      "其他"
+    ];
+    const BEAR_ATTRACTORS = [
+      "無",
+      "自然食物資源",
+      "動物屍體",
+      "農作物",
+      "家禽/畜",
+      "蜂蜜",
+      "垃圾/廚餘",
+      "動物飼料",
+      "人類食物",
+      "其他"
     ];
 
     return {
       images: [],
+      GROUND_TYPES,
+      VEGETATIONS,
+      BEAR_ATTRACTORS,
       onChange: function (e: InputEvent) {
         context.emit("input", (e.target as HTMLInputElement).files);
       },
@@ -180,9 +269,9 @@ export default createComponent({
         // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         props.onClickRemoveImage!(image);
       },
-      reportTypeItems,
+      reportTypeItems
     };
-  },
+  }
 });
 </script>
 
