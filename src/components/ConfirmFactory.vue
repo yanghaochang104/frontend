@@ -15,9 +15,9 @@
 
       <h2 class="mt-2 mb-2 secondary--text">授權條款</h2>
 
-      <v-checkbox v-model="formState.agree" :label="'我同意授權條款'"/>
+      <div>本授權條款允許使用者重製、散布、傳輸以及修改著作（包括商業性利用）。若使用者修改該著作時，僅得依本授權條款或與本授權條款類似者來散布該衍生作品。使用時必須按照著作人指定的方式表彰其姓名。本授權條款允許使用者重製、散布、傳輸以及修改著作（包括商業性利用）。若使用者修改該著作時，僅得依本授權條款或與本授權條款類似者來散布該衍生作品。使用時必須按照著作人指定的方式表彰其姓名。</div>
 
-      <h2 class="mt-2 mb-2 secondary--text">確認通報資料</h2>
+      <v-checkbox v-model="formState.agree" :label="'我同意授權條款'"/>
 
       <!-- <h2 class="mt-2 mb-2 secondary--text">確認及補充工廠資訊</h2>
 
