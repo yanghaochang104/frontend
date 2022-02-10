@@ -2,7 +2,7 @@
   <div class="getting-started-container">
     <app-modal :open="open" :showCloseButton="false" :dismiss="dismiss">
       <div class="page">
-        <h3 class="text-center">歡迎來到<b>黑熊出沒痕跡通報系統！</b></h3>
+        <h3 class="text-center">歡迎來到<b>OH!SHOWN 黑熊出沒痕跡通報系統！</b></h3>
         <br><br>
         <p>需要大家回報以下黑熊出沒痕跡之照片及資訊：</p>
 
