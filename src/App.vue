@@ -5,7 +5,7 @@
         <v-icon>mdi-temp</v-icon>
       </v-btn>
       <v-spacer class="d-sm-none" />
-      <v-toolbar-title>黑熊出沒痕跡通報</v-toolbar-title>
+      <v-toolbar-title>OH!SHOWN 黑熊出沒痕跡通報</v-toolbar-title>
       <v-spacer />
       <div class="d-none d-sm-flex">
         <v-btn text @click="modalActions.openTutorialModal">
