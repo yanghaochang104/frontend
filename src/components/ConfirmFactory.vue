@@ -7,8 +7,8 @@
       <h3 class="mt-5 mb-2 primary--text">姓名</h3>
       <v-text-field outlined v-model="formState.contactName" placeholder="例：王小明" color="primary" />
 
-      <h3 class="mt-5 mb-2 primary--text">手機</h3>
-      <v-text-field outlined v-model="formState.contactPhone" placeholder="例：09XX-XXXXXX" color="primary" />
+      <h3 class="mt-5 mb-2 primary--text">手機或電話</h3>
+      <v-text-field outlined v-model="formState.contactPhone" placeholder="例：09XX-XXXXXX 或 0X-XXXXXXX" color="primary" />
 
       <h3 class="mt-5 mb-2 primary--text">Email</h3>
       <v-text-field outlined v-model="formState.contactMail" placeholder="例：bear@bear.com" color="primary" />
