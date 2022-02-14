@@ -116,29 +116,6 @@
         </div>
       </div>
       <hr />
-      <h2 class="mt-7 mb-2 secondary--text">聯絡資訊（非必填）</h2>
-
-      <p>
-        如果對於照片有疑問，<br />
-        我們會透過以下提供的資訊聯絡你。<br />
-        如不願揭露自己身份，可跳過不填。
-      </p>
-
-      <h3 class="primary--text mt-7 mb-2">聯絡人暱稱</h3>
-
-      <v-text-field
-        outlined
-        placeholder="例：林先生、林小姐"
-        v-model="formState.nickname"
-      ></v-text-field>
-
-      <h3 class="primary--text mt-7 mb-2">聯絡方式 (email或電話)</h3>
-
-      <v-text-field
-        outlined
-        placeholder="例：abc@email.com、0920-123456"
-        v-model="formState.contact"
-      ></v-text-field>
 
       <h3 class="mt-5 mb-2 primary--text">我要通報...</h3>
       <v-select

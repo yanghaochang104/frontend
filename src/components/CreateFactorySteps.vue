@@ -74,7 +74,7 @@
         :class="{ inactive: appState.createStepIndex < 3 }"
         @click="switchStep(3)"
       >
-        <span>Page3 填寫問券</span>
+        <span>填寫問券</span>
         <v-icon class="mr-1">mdi-chevron-right</v-icon>
       </div>
 
@@ -83,7 +83,7 @@
         :class="{ inactive: appState.createStepIndex < 4 }"
         @click="switchStep(4)"
       >
-        <span>Page4</span>
+        <span>填寫聯絡資訊</span>
       </div>
 
       <v-spacer></v-spacer>
