@@ -54,5 +54,3 @@ export default createComponent({
         vertical-align: middle;
     }
 </style>
-
-</style>
